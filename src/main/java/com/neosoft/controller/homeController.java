@@ -12,7 +12,7 @@ public class homeController {
 	@GetMapping("/")
 	public String showPage(Model model) {
 
-		model.addAttribute("labelName", Common.getBankTOVolet());
+		model.addAttribute("labelName", Common.getService());
 		return "homePage.html";
 	}
 }

@@ -4,8 +4,8 @@ import java.util.List;
 
 public class Common {
 
-	public static List<String> getBankTOVolet() {
-		return List.of("Bank To Wallet", " Wallet To Bank");
+	public static List<String> getService() {
+		return List.of("", " ");
 	}	
 	
 }
