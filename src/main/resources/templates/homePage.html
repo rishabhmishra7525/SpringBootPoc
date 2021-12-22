@@ -1,0 +1,580 @@
+ <!DOCTYPE html>
+<html>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+ 
+  #section1 {padding-top:50px;height:500px;color: black; background-color: white;}
+ 
+  </style>
+  <style>
+* {
+  box-sizing: border-box;
+}
+select{
+position: absolute;right: 0px; padding: 9px;
+}
+.box {
+  float: left;
+  width: 50%;
+  padding: 50px;
+  height: 300px;
+  height: 300px;
+    overflow-y: auto;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.exp{
+padding-left: 67px;
+    margin-bottom: 28px;
+}
+
+div.container{
+display: none;
+}
+</style>
+</head>
+<body >
+
+<div class="container1">
+  <h2 align="center">Interview helper</h2>
+</div>
+<div class="exp" align="left">
+<label>Select Experience</label>
+<br>
+                      <form action="" >
+                         <select   id="experience"  name="experience"  onchange="getSelectValue();"  style="width: 41%;
+                             padding: 10px;position:relative;"  >
+						    <option value="">-Select Experience-</option>
+						    <option value="PHP-0-2">PHP (0-2)</option>
+						     <option value="PHP-2-4">PHP (2-4)</option>
+						     <option value="PHP-5">PHP (5+)</option>
+						     
+                             
+						 </select>
+                      
+                      <span id="experienceError"> </span>
+                      
+                      </form>
+</div>
+ <div class="container">
+<div  class="hiddshow" >
+
+  <div class="box" >
+  <form action="save" id='myform' method="post">
+  <div  id="section1" class="container-fluid">
+    <div style="position: relative;">
+       <b> 1. communication  </b>
+          <select  name="communication" id="communication" required="required" onchange="getCommunication();"  >
+						    <option value="">-Select-</option>
+						    <option value="lavel1">Lavel-1</option>
+						     <option value="lavel2">Lavel-2</option>
+						     <option value="lavel3">Lavel-3</option>
+						     <option value="lavel4">Lavel-4</option>
+						     <option value="lavel5">Lavel-5</option>
+						 </select>
+       
+       
+       
+      <hr>
+       
+       <b> 2. Basic of Web Devlopment</b>
+          <select  name="basicweb" id="basicweb" required="required" onchange="getBasicWeb();">
+						    <option value="">-Select-</option>
+						    <option value="lavel1">Lavel-1</option>
+						     <option value="lavel2">Lavel-2</option>
+						     <option value="lavel3">Lavel-3</option>
+						     <option value="lavel4">Lavel-4</option>
+						     <option value="lavel5">Lavel-5</option>
+						 </select>
+       
+       <p>HTML5</p>
+       <p>CSS</p>
+       <p>JavaScript</p>
+       
+        <hr>
+       
+             <b> 3. Oops    </b>
+
+          <select  name="opp" id="opp" required="required" onchange="Opps();" >
+						    <option value="">-Select-</option>
+						    <option value="lavel1">Lavel-1</option>
+						     <option value="lavel2">Lavel-2</option>
+						     <option value="lavel3">Lavel-3</option>
+						     <option value="lavel4">Lavel-4</option>
+						     <option value="lavel5">Lavel-5</option>
+						 </select>
+       
+       
+       
+        <hr>
+       
+             <b> 4. Programming Langauge/framework      </b>
+
+          <select  name="program" id="program" required="required" onchange="Programming();">
+						    <option value="">-Select-</option>
+						    <option value="lavel1">Lavel-1</option>
+						     <option value="lavel2">Lavel-2</option>
+						     <option value="lavel3">Lavel-3</option>
+						     <option value="lavel4">Lavel-4</option>
+						     <option value="lavel5">Lavel-5</option>
+						 </select>
+						 
+						<br> 
+		      <p>Programming Language (PBP/FRAMEWORD/CMS)</p>				 
+		 				
+						<br> 
+       
+        <hr>
+       
+             <b> 5. version controller     </b>
+
+          <select  name="versioncontroll" id="versioncontroll" required="required" onchange="Versioncontroller();">
+						    <option value="">-Select-</option>
+						    <option value="lavel1">Lavel-1</option>
+						     <option value="lavel2">Lavel-2</option>
+						     <option value="lavel3">Lavel-3</option>
+						     <option value="lavel4">Lavel-4</option>
+						     <option value="lavel5">Lavel-5</option>
+						 </select>
+       <br> 
+      
+       <p>Git/SVN</p>	
+       
+        <hr>
+       
+          <b> 6. Database     </b>
+
+          <select   name="databse" id="databse" required="required" onchange="Databses();">
+						    <option value="">-Select-</option>
+						    <option value="lavel1">Lavel-1</option>
+						     <option value="lavel2">Lavel-2</option>
+						     <option value="lavel3">Lavel-3</option>
+						     <option value="lavel4">Lavel-4</option>
+						     <option value="lavel5">Lavel-5</option>
+						 </select>
+       
+       <br> 
+       <p>RelationalDB(mySQL/Postgres/mssql)</p>	
+       
+       
+        <hr>
+       
+             <b> 7. Basic Concept    </b>
+
+          <select   name="basicconcepts" id="basicconcepts" required="required" onchange="Basicconceptss();">
+						    <option value="">-Select-</option>
+						    <option value="lavel1">Lavel-1</option>
+						     <option value="lavel2">Lavel-2</option>
+						     <option value="lavel3">Lavel-3</option>
+						     <option value="lavel4">Lavel-4</option>
+						     <option value="lavel5">Lavel-5</option>
+						 </select>
+       
+       <br> 
+        <p> Authentication </p>
+        <p> Single factor Authentication </p>
+        <p> API </p>
+        <p> What is An Api </p>
+        
+        
+        <button type="button" style="width: 101%;
+                             padding: 8px;position:relative;" class="btn btn-success"> Submit</button>
+    </div>
+    
+       </div>
+  
+  </form>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+   
+  
+ <!-- ------------- -->
+ <p align="center" style="font-weight:bold">Result</p>
+  <div class="box" style="background-color:#ccc">
+   
+   
+     <p style="font-weight:bold"> 1. communication : <small id="comm"></small> </p>
+     <p style="font-weight:bold"> 2. basic of web devlopment : <small id="bas"></small> </p> 
+     <p style="font-weight:bold"> 3. oops :<small id="opps"></small> </p> 
+     <p style="font-weight:bold"> 4. Programming Langauge/framework :<small id="pogr"></small> </p>
+     <p style="font-weight:bold"> 5. version controller :<small  id="version"></small> </p> 
+     <p style="font-weight:bold"> 6. Database :<small id="database"></small> </p> 
+     <p style="font-weight:bold"> 7. basic concept :<small  id="basicconcept"></small> </p>
+   
+  <b>---------------------------</b>
+      <p style="font-weight:bold"> The Results is : </p>
+      <p style="font-weight:bold"> overall grade : </p>
+   
+   
+   
+    </div>
+
+ </div>
+
+  <script type="text/javascript">
+  
+  var selectedValue ="";
+  function getSelectValue()
+  {
+      selectedValue = document.getElementById("experience").value;
+      
+       if(selectedValue==''){
+    	   
+    	   $(" div.container").hide();
+       }else{
+    	   $(" div.container").show();
+       }
+  }
+  
+  
+  
+  var bs=""
+	  function Basicconceptss()
+  {
+  
+	  bs = document.getElementById("basicconcepts").value;
+	  
+	  if( bs=='lavel1'){
+	    
+	    		
+		 $('#basicconcept').text("1/5");
+		 
+	    }
+	  else if( bs=='lavel2'){
+		    
+  		
+			 $('#basicconcept').text("2/5");
+			 
+		    }
+	  else if( bs=='lavel3'){
+		    
+  		
+			 $('#basicconcept').text("3/5");
+			 
+		    }
+	  else if( bs=='lavel4'){
+		    
+  		
+			 $('#basicconcept').text("4/5");
+			 
+		    }
+	  else if( bs=='lavel5'){
+		    
+  		
+			 $('#basicconcept').text("5/5");
+			 
+		    }
+  }
+  
+  
+  var db=""
+	  function Databses()
+  {
+  
+	  db = document.getElementById("databse").value;
+	  
+	  if(db=='lavel1'){
+	    
+	    		
+		 $('#database').text("1/5");
+		 
+	    }
+	  else if(db=='lavel2'){
+		    
+  		
+			 $('#database').text("2/5");
+			 
+		    }
+	  else if(db=='lavel3'){
+		    
+  		
+			 $('#database').text("3/5");
+			 
+		    }
+	  else if(db=='lavel4'){
+		    
+  		
+			 $('#database').text("4/5");
+			 
+		    }
+	  else if(db=='lavel5'){
+		    
+  		
+			 $('#database').text("5/5");
+			 
+		    }
+  }
+  
+  
+  
+  var ver=""
+	  function Versioncontroller()
+  {
+  
+	 ver = document.getElementById("versioncontroll").value;
+	  
+	  if(ver=='lavel1'){
+	    
+	    		
+		 $('#version').text("1/5");
+		 
+	    }
+	  else if(ver=='lavel2'){
+		    
+  		
+			 $('#version').text("2/5");
+			 
+		    }
+	  else if(ver=='lavel3'){
+		    
+  		
+			 $('#version').text("3/5");
+			 
+		    }
+	  else if(ver=='lavel4'){
+		    
+  		
+			 $('#version').text("4/5");
+			 
+		    }
+	  else if(ver=='lavel5'){
+		    
+  		
+			 $('#version').text("5/5");
+			 
+		    }
+  }
+  
+  
+  
+  
+  
+  var po=""
+	  function Programming()
+  {
+  
+	  po = document.getElementById("program").value;
+	  
+	  if(po=='lavel1'){
+	    
+	    		
+		 $('#pogr').text("1/5");
+		 
+	    }
+	  else if(po=='lavel2'){
+		    
+  		
+			 $('#pogr').text("2/5");
+			 
+		    }
+	  else if(po=='lavel3'){
+		    
+  		
+			 $('#pogr').text("3/5");
+			 
+		    }
+	  else if(po=='lavel4'){
+		    
+  		
+			 $('#pogr').text("4/5");
+			 
+		    }
+	  else if(po=='lavel5'){
+		    
+  		
+			 $('#pogr').text("5/5");
+			 
+		    }
+  }
+  
+  
+  
+  var op=""
+	  function Opps()
+  {
+  
+	  op = document.getElementById("opp").value;
+	  
+	  if(op=='lavel1'){
+	    
+	    		
+		 $('#opps').text("1/5");
+		 
+	    }
+	  else if(op=='lavel2'){
+		    
+  		
+			 $('#opps').text("2/5");
+			 
+		    }
+	  else if(op=='lavel3'){
+		    
+  		
+			 $('#opps').text("3/5");
+			 
+		    }
+	  else if(op=='lavel4'){
+		    
+  		
+			 $('#opps').text("4/5");
+			 
+		    }
+	  else if(op=='lavel5'){
+		    
+  		
+			 $('#opps').text("5/5");
+			 
+		    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  var basic=""
+	  function getBasicWeb()
+  {
+  
+	  basic = document.getElementById("basicweb").value;
+	  
+	  if(basic=='lavel1'){
+	    
+	    		
+		 $('#bas').text("1/5");
+		 
+	    }
+	  else if(basic=='lavel2'){
+		    
+  		
+			 $('#bas').text("2/5");
+			 
+		    }
+	  else if(basic=='lavel3'){
+		    
+  		
+			 $('#bas').text("3/5");
+			 
+		    }
+	  else if(basic=='lavel4'){
+		    
+  		
+			 $('#bas').text("4/5");
+			 
+		    }
+	  else if(basic=='lavel5'){
+		    
+  		
+			 $('#bas').text("5/5");
+			 
+		    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+var communication="";
+  
+  
+function getCommunication()
+{
+	communication = document.getElementById("communication").value;
+    if(communication=='lavel1'){
+    	
+    		
+	 $('#comm').text("1/5");
+	 
+    }
+    else if(communication=='lavel2'){
+        		
+    		 $('#comm').text("2/5");
+    		 
+    	    }
+    
+    else if(communication=='lavel3'){
+    	
+    		
+    		 $('#comm').text("3/5");
+    		 
+    	    }
+    else if(communication=='lavel4'){
+    	
+    		
+    		 $('#comm').text("4/5");
+    		 
+    	    }
+    else if(communication=='lavel5'){
+    	
+    		
+    		 $('#comm').text("5/5");
+    		 
+    	    }
+    
+    
+}
+  
+ 
+  
+  
+  $(document).ready(function () {
+	  
+	 
+	  var myData = $("#myForm").getFormData();
+	  
+	  alet(myData)
+	  console.log(myData)
+	
+  });
+  
+  </script>
+
+
+</body>
+
+
+</html>
+ 
