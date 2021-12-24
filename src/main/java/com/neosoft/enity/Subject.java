@@ -19,6 +19,7 @@ public class Subject {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	private String subjectName;
+	private String Skill;
 	
 	
 	

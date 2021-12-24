@@ -1,13 +1,20 @@
 package com.neosoft.controller;
 
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.neosoft.dto.FromFeild;
+import com.neosoft.repo.SubjectRepo;
 import com.neosoft.util.Common;
 
 import lombok.extern.slf4j.Slf4j;
@@ -16,32 +23,31 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class homeController {
 
+	@Autowired
+	private SubjectRepo repo;
+
 	@GetMapping("/")
 	public String showPage(Model model) {
-		model.addAttribute("labelName", Common.getService());
-		model.addAttribute("skill", Common.skillLave());
-		
-		
+
+		List<String> experience = repo.findAllexperienceLavel();
+		experience.removeIf(Objects::isNull);
+		List<String> skilllable = repo.findAllSkillLavel();
+		log.info(" - { } -" + experience);
+		log.info(" - { } -" + skilllable);
+
+		model.addAttribute("labelName", experience);
+		model.addAttribute("skill", skilllable);
+
 		return "homePage.html";
 	}
-	
-	@GetMapping("/test")
+
+	@PostMapping("/process")
 	@ResponseBody
-	public String data() {
-		
-		return "1/5";
+	public Double addBook(@RequestBody FromFeild from) {
+
+		Double calculate = Common.calculateService(from);
+
+		return calculate;
 	}
-	
-	
-	@RequestMapping(value = "/profile", method = RequestMethod.GET)
-	public @ResponseBody String processAJAXRequest(
-	            @RequestParam("communication") String firstname,
-	            @RequestParam("basicweb") String lastname   ) {
-	        String response = firstname+lastname;
-	        // Process the request
-	        // Prepare the response string
-	        return response;
-	    }
-	
-	
+
 }
