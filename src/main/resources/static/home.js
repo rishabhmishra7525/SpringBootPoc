@@ -221,5 +221,35 @@
 		
 		
 	  
+	  
+	  function myFunction() {
+      var copyText = document.getElementById("comm");
+      var copyText2 = document.getElementById("bas");
+      var copyText3 = document.getElementById("opps");
+      var output = document.getElementById("output");
+      output.value =
+      "1. communication :"
+      + 1/5+ 
+      " _\n 2. basic of web devlopment" 
+      + 2/5 +
+       "_\n 3. oops :" 
+       + 3/5+
+      "_\n 4. Programming Langauge/framework:" 
+         +3/5+
+         "_\n 5.version controller : "
+         +4/5+
+         "_\n 6.database : "
+         +5/5+
+         "\n--------------- \n"
+         +"The result :"
+         +64.5
+         ;
+      
+     
+     
+      output.select();
+      document.execCommand("copy");
+
+    }
 		
 	
